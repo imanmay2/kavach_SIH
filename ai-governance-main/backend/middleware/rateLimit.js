@@ -10,8 +10,8 @@ redisClient.on('error', (err) => {
 });
 
 // --- Configuration ---
-const BUCKET_CAPACITY = 10;       // Max burst capacity
-const REFILL_RATE = 0.5;          // Tokens refilled per second (1 token every 2 seconds = 30 req/min)
+const BUCKET_CAPACITY = process.env.NODE_ENV === 'development' ? 200 : 100;       // Max burst capacity (increased for development to prevent UI page load bottlenecks)
+const REFILL_RATE = process.env.NODE_ENV === 'development' ? 10.0 : 2.0;          // Tokens refilled per second (increased for development to allow parallel API requests)
 // ---------------------
 
 // Lua script for atomic Token Bucket execution

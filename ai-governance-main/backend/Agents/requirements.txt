@@ -133,3 +133,12 @@ zipp
 zstandard
 atlassian-python-api
 langchain-google-vertexai
+langgraph
+langchain
+langchain-core
+langchain-text-splitters
+langchain-google-genai
+google-generativeai
+fastapi
+
+

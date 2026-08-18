@@ -11,7 +11,7 @@ try:
     print(f"API Key: {os.getenv('GOOGLE_API_KEY')[:10]}...")
     print("Invoking test call...")
     response = llm.invoke("Hello, say 'API works' in one word.")
-    print(f"✅ Success! Response: {response.content}")
+    print(f"Success! Response: {response.content}")
 except Exception as e:
     print(f" Error occurred during LLM call: {e}")
     import traceback

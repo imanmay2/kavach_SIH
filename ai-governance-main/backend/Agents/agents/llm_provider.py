@@ -18,7 +18,7 @@ def get_chat_model(temperature: float = 0.2):
             project_id = os.getenv("GOOGLE_CLOUD_PROJECT_ID", "bionic-mercury-455722-g1")
             location = os.getenv("GOOGLE_CLOUD_LOCATION", "us-central1")
             return ChatVertexAI(
-                model=os.getenv("GEMINI_CHAT_MODEL", "gemini-2.5-flash"),
+                model=os.getenv("GEMINI_CHAT_MODEL", "gemini-3.5-flash"),
                 temperature=temperature,
                 project=project_id,
                 location=location,
