@@ -1,0 +1,12 @@
+{
+  "name": "dept-municipal-adapter",
+  "version": "1.0.0",
+  "description": "Mock municipal department adapter",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
