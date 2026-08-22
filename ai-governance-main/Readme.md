@@ -1,16 +1,16 @@
-# Rakfort AI Governance Platform
+# Kavach AI Governance Platform
 
-Welcome to the documentation for the Rakfort AI Governance Platform. This solution provides a comprehensive, unified control plane for managing your organization's AI risk, compliance, and trust.
+Welcome to the documentation for the Kavach AI Governance Platform. This solution provides a comprehensive, unified control plane for managing your organization's AI risk, compliance, and trust.
 
 Our platform empowers you to operationalize AI governance by providing real-time visibility and automated workflows, enabling you to build, deploy, and manage AI systems responsibly and in compliance with global regulations.
 
-https://governance.rakfort.com
+https://governance.kavach.com
 
 ---
 
 ## Core Platform Features
 
-The Rakfort AI Governance Platform is built around a central dashboard that provides access to all critical governance functions.
+The Kavach AI Governance Platform is built around a central dashboard that provides access to all critical governance functions.
 
 ### 1. The AI Governance Dashboard 
 This is the central hub for your entire AI governance program. It provides a single-pane-of-glass view of all your AI assets, their risk posture, and their compliance status.
@@ -62,13 +62,13 @@ Build and maintain trust with your customers, partners, and regulators. The Trus
 
 ## See It in Action
 
-The best way to understand the power of the Rakfort AI Governance Platform is to see it live.
+The best way to understand the power of the Kavach AI Governance Platform is to see it live.
 
-* **Demo Account: Use below details:** https://governance.rakfort.com
+* **Demo Account: Use below details:** https://governance.kavach.com
   
-Username: demo@rakfort.com; Password: governance.demo@Rakfort
+Username: demo@kavach.com; Password: governance.demo@Kavach
 
-* **Request a Demo:** Visit our [Demo Page](https://governance.rakfort.com/demo) (or your specific demo link) to schedule a personalized walkthrough with our team.
+* **Request a Demo:** Visit our [Demo Page](https://governance.kavach.com/demo) (or your specific demo link) to schedule a personalized walkthrough with our team.
 
 ![alt text](<assets/Demo Page.png>)
 
@@ -214,8 +214,8 @@ node createDemoUser.js
 Then open: **http://localhost:5173/**
 
 Login with the demo account:
-- Email: `demo@rakfort.com`
-- Password: `governance.demo@Rakfort`
+- Email: `demo@kavach.com`
+- Password: `governance.demo@Kavach`
 
 ### Verifying It Works
 
@@ -232,7 +232,7 @@ curl http://localhost:8000/                            # → {"version":"2.0.0"}
 # Login
 curl -X POST http://localhost:3001/auth/login \
   -H "Content-Type: application/json" \
-  -d '{"email":"demo@rakfort.com","password":"governance.demo@Rakfort"}'
+  -d '{"email":"demo@kavach.com","password":"governance.demo@Kavach"}'
 
 # Jira sync (after Atlassian creds set)
 curl http://localhost:8000/agent/integrations/jira
@@ -269,12 +269,12 @@ curl "http://localhost:8000/agent/integrations/confluence/mcp?query=requirements
 
 - **Never commit `.env` files** — they're gitignored for good reason. If you accidentally commit one, **rotate every key inside it immediately.**
 - API tokens (Atlassian, OpenAI, Google) should be **rotated periodically** and revoked the moment they're no longer needed.
-- The demo password (`governance.demo@Rakfort`) is fine for local dev only. Change it before exposing the app to a network.
+- The demo password (`governance.demo@Kavach`) is fine for local dev only. Change it before exposing the app to a network.
 
 ## Contact & Support
 
 For more information, please visit our official website or get in touch.
 
-* **Website:** [https://rakfort.com](https://rakfort.com)
-* **AI Governance Page:** [https://governance.rakfort.com](https://governance.rakfort.com)
-* **Contact Us:** info@rakfort.com;  [https://rakfort.com/contact/](https://rakfort.com/contact/); 
+* **Website:** [https://kavach.com](https://kavach.com)
+* **AI Governance Page:** [https://governance.kavach.com](https://governance.kavach.com)
+* **Contact Us:** info@kavach.com;  [https://kavach.com/contact/](https://kavach.com/contact/); 

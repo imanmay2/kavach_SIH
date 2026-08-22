@@ -45,14 +45,14 @@ const Home = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <ComplianceCard
-                title="EU AI Act"
-                description="European Union Artificial Intelligence Act compliance"
+                title="India AI Governance"
+                description="India AI Governance Guidelines compliance"
                 progress={75}
                 status="in-progress"
               />
               <ComplianceCard
-                title="GDPR"
-                description="General Data Protection Regulation"
+                title="DPDP Act"
+                description="Digital Personal Data Protection Act compliance"
                 progress={100}
                 status="compliant"
               />

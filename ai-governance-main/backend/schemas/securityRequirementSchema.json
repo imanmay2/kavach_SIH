@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://rakfort.com/schemas/security-requirement.json",
+  "$id": "https://kavach.com/schemas/security-requirement.json",
   "title": "Security Requirement",
-  "description": "Schema for RAKFORT Healthcare security requirements",
+  "description": "Schema for KAVACH Healthcare security requirements",
   "type": "object",
   "required": [
     "id",
@@ -70,6 +70,9 @@
               "NIST CSF",
               "PCI DSS",
               "GDPR",
+              "DPDP Act 2023",
+              "DPDP Rules 2025",
+              "India AI Governance Guidelines",
               "NIS2",
               "MDR",
               "HIPAA"

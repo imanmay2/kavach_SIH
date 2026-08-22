@@ -5,8 +5,8 @@ async function createAdmin() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         name: "Demo User",
-        email: "demo@rakfort.com",
-        password: "governance.demo@Rakfort",
+        email: "demo@kavach.com",
+        password: "governance.demo@Kavach",
         role: "admin"
       })
     });

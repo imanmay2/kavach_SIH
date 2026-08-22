@@ -222,7 +222,7 @@ class TrustCenterRAGService {
     const lowerMessage = question.toLowerCase();
     
     if (lowerMessage.includes("gdpr") || lowerMessage.includes("privacy")) {
-      return "I can help you with GDPR compliance. Our Privacy Policy is regularly updated and available in the Trust Center Documents. We process data in accordance with EU regulations and provide easy-to-use data subject rights management.";
+      return "I can help you with DPDP Act compliance. Our Privacy Policy is regularly updated and available in the Trust Center Documents. We process data in accordance with Indian data protection requirements and provide easy-to-use data principal rights management.";
     }
     
     if (lowerMessage.includes("security") || lowerMessage.includes("certificate")) {

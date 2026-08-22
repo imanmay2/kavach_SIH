@@ -133,7 +133,7 @@ const Overview = ({ project }) => {
                 <div className="text-2xl font-bold text-blue-600">
                   {governanceService.formatScore(governanceScores.eu_score)}
                 </div>
-                <div className="text-sm text-gray-600">EU AI Act</div>
+                <div className="text-sm text-gray-600">India AI Governance</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-green-600">
@@ -182,10 +182,10 @@ const Overview = ({ project }) => {
         {/* Renders only if the project is an AI system */}
         {isAiSystem && (
           <>
-            {/* EU AI Act */}
+            {/* India AI Governance Guidelines */}
             <div className="flex-1">
               <div className="font-medium mb-2">
-                EU AI Act Completion Status
+                India AI Governance Completion Status
               </div>
               <div className="border border-gray-300 p-4 rounded-lg bg-white flex flex-col gap-6">
                 {/* Subcontrols */}

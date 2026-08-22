@@ -11,7 +11,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import dayjs from "dayjs";
 
 const owners = ["VerifyWise Admin"];
-const regulations = ["ISO 42001", "EU AI Act"];
+const regulations = ["ISO 42001", "India AI Governance Guidelines", "DPDP Act 2023"];
 const teamMembers = ["Alice Smith", "John Doe", "VerifyWise Admin"];
 const riskLevels = ["High risk", "Medium risk", "Low risk"];
 const highRiskRoles = ["Deployer", "Developer", "Operator"];

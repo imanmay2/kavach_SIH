@@ -17,7 +17,7 @@ import dayjs from "dayjs";
 
 const owners = ["VerifyWise Admin", "Admin User", "John Doe"];
 const teamMembers = ["Alice Smith", "John Doe", "VerifyWise Admin", "Admin User", "Bob Johnson"];
-const regulations = ["ISO 42001", "EU AI Act", "NIST AI RMF", "GDPR"];
+const regulations = ["ISO 42001", "India AI Governance Guidelines", "NIST AI RMF", "DPDP Act 2023"];
 const riskLevels = ["High risk", "Medium risk", "Low risk"];
 const highRiskRoles = ["Deployer", "Developer", "Operator", "Maintainer"];
 

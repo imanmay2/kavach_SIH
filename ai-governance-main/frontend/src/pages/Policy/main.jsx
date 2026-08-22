@@ -8,7 +8,7 @@ const policies = [
   {
     title: "Data Privacy and Protection",
     description:
-      "All AI systems must comply with data protection regulations including GDPR. Personal data used for AI training and operation must be properly anonymized and secured.",
+      "All AI systems must comply with data protection regulations including the DPDP Act 2023. Personal data used for AI training and operation must be properly anonymized and secured.",
     link: "#",
   },
   {

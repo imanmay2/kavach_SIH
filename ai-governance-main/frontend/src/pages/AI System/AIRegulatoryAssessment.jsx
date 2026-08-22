@@ -7,36 +7,36 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const AIRegulatoryAssessment = () => {
   const regulatoryFrameworks = [
     {
-      name: "EU AI Act",
+      name: "India AI Governance Guidelines",
       status: "In Progress",
       compliance: 75,
       deadline: "Dec 2024",
       priority: "High",
-      description: "European Union AI Act compliance assessment"
+      description: "India AI Governance Guidelines compliance assessment"
     },
     {
-      name: "GDPR",
+      name: "DPDP Act 2023",
       status: "Compliant",
       compliance: 100,
       deadline: "Ongoing",
       priority: "Critical",
-      description: "General Data Protection Regulation"
+      description: "Digital Personal Data Protection Act"
     },
     {
-      name: "CCPA",
+      name: "DPDP Rules 2025",
       status: "Assessment",
       compliance: 45,
       deadline: "Mar 2025",
       priority: "Medium",
-      description: "California Consumer Privacy Act"
+      description: "Digital Personal Data Protection Rules"
     },
     {
-      name: "SOX",
+      name: "IT Rules - SGI",
       status: "Pending",
       compliance: 0,
       deadline: "Jun 2025",
       priority: "Low",
-      description: "Sarbanes-Oxley Act compliance"
+      description: "Synthetic generated information and deepfake due diligence"
     }
   ];
 
@@ -192,7 +192,7 @@ const AIRegulatoryAssessment = () => {
                   <h3 className="text-lg font-semibold mb-4">Framework Requirements</h3>
                   <div className="space-y-4">
                     <div className="p-4 border rounded-lg">
-                      <h4 className="font-medium mb-2">EU AI Act Requirements</h4>
+                      <h4 className="font-medium mb-2">India AI Governance Requirements</h4>
                       <ul className="text-sm text-muted-foreground space-y-1">
                         <li>• Risk classification and assessment</li>
                         <li>• Quality management systems</li>
@@ -202,7 +202,7 @@ const AIRegulatoryAssessment = () => {
                       </ul>
                     </div>
                     <div className="p-4 border rounded-lg">
-                      <h4 className="font-medium mb-2">GDPR Compliance</h4>
+                      <h4 className="font-medium mb-2">DPDP Act Compliance</h4>
                       <ul className="text-sm text-muted-foreground space-y-1">
                         <li>• Data protection impact assessments</li>
                         <li>• Privacy by design implementation</li>

@@ -10,7 +10,7 @@ c:\Users\bella\Downloads\AI-Governance-main\
 │   │   ├── routes/requirements.js
 │   │   └── models/SecurityRequirement.js
 │   └── frontend/
-└── Rakfort Site/
+└── Kavach Site/
     └── Backend/
         ├── server.js ← Port 3001 (if running)
         └── models/Requirement.js
@@ -372,7 +372,7 @@ $response.data | ForEach-Object {
 
 **Prerequisites:**
 - Python agent must be running on `http://localhost:8000`
-- Check: [Rakfort Site/Agents/main.py](../../Rakfort%20Site/Agents/main.py)
+- Check: [Kavach Site/Agents/main.py](../../Kavach%20Site/Agents/main.py)
 
 **Run in:** PowerShell Terminal #2
 
@@ -517,7 +517,7 @@ console.log(localStorage.getItem('token'))
 ```powershell
 # Python agent not running
 # This is OK for testing - skip this test
-# To fix: Start Python agent from Rakfort Site/Agents folder
+# To fix: Start Python agent from Kavach Site/Agents folder
 ```
 
 ---

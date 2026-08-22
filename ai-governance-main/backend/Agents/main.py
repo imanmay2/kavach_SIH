@@ -739,5 +739,5 @@ def libraries_import():
 # --- Run command (for direct execution) ---
 if __name__ == "__main__":
     import uvicorn
-    # Trigger reload with live Atlassian environment variables
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    # Set reload=False to prevent uvicorn from spawning child processes using the system python on Windows
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=False)

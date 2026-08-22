@@ -580,7 +580,7 @@ export const sampleTemplates = [
       },
       {
         id: 29,
-        question: "Is the system compliant with relevant security standards or regulations (e.g., ISO 27001, GDPR, HIPAA)?",
+        question: "Is the system compliant with relevant security standards or regulations (e.g., ISO 27001, DPDP Act, HIPAA)?",
         responseType: "boolean",
         required: true
       },

@@ -13,7 +13,7 @@ const TrustCenterChatbot = () => {
   const [messages, setMessages] = useState([
     {
       id: "1",
-      text: "Hello! I'm your Trust Center assistant. I can help you with compliance questions, security policies, and document inquiries. How can I assist you today?",
+      text: "Hello! I'm your Ledger assistant. I can help you with compliance questions, security policies, and document inquiries. How can I assist you today?",
       sender: "bot",
       timestamp: new Date()
     }
@@ -138,7 +138,7 @@ const TrustCenterChatbot = () => {
                 <Bot className="h-4 w-4" />
               </div>
               <div>
-                <CardTitle className="text-sm font-medium">Trust Center Assistant</CardTitle>
+                <CardTitle className="text-sm font-medium">Ledger Assistant</CardTitle>
                 <p className="text-xs text-blue-100">Online • Ready to help</p>
               </div>
             </div>
@@ -251,7 +251,7 @@ const TrustCenterChatbot = () => {
                   AI Assistant
                 </Badge>
                 <span className="text-xs text-muted-foreground">
-                  Powered by Trust Center Knowledge
+                  Powered by Ledger Knowledge
                 </span>
               </div>
             </div>

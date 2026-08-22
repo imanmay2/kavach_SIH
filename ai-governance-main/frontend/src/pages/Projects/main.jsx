@@ -11,7 +11,7 @@ const Projects = () => {
     const [projects, setProjects] = useState([
       {
         title: 'AI Compliance Checker',
-        tags: ['EU AI Act', 'ISO 42001'],
+        tags: ['India AI Governance Guidelines', 'ISO 42001'],
         subcontrols: 27,
         totalSubcontrols: 100,
         assessments: 20,

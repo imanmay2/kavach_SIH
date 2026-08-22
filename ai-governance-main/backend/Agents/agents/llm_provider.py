@@ -23,10 +23,12 @@ def get_chat_model(temperature: float = 0.2):
                 project=project_id,
                 location=location,
             )
-        except ImportError:
+        except ImportError as e:
+            import traceback
+            traceback.print_exc()
             raise RuntimeError(
                 "langchain-google-vertexai package is not installed. "
-                "Please run: pip install langchain-google-vertexai"
+                "Please run: pip install langchain-google-vertexai. Original error: " + str(e)
             )
 
     api_key = os.getenv("GOOGLE_API_KEY")

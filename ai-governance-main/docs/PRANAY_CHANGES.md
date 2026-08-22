@@ -141,7 +141,7 @@ POST /agent/libraries/import
 The Requirements page now has an Export Assessment button that generates a workbook similar to:
 
 ```txt
-RAKFORT_Healthcare_Risk_Assessment.xlsx
+KAVACH_Healthcare_Risk_Assessment.xlsx
 ```
 
 Generated sheets:

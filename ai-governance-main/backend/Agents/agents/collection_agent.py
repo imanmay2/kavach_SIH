@@ -254,7 +254,11 @@ async def collect_requirements(payload: CollectionIn):
             finished=False,
         )
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc))
+        import traceback
+        tb = traceback.format_exc()
+        print("[ERROR IN COLLECT_REQUIREMENTS]:")
+        print(tb)
+        raise HTTPException(status_code=500, detail=f"{str(exc)}\n{tb}")
 
 
 @router.post("/upload")

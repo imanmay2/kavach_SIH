@@ -118,4 +118,4 @@ Open 3 terminals:
    ```
 
 * **Frontend URL**: http://localhost:5173
-* **Admin Login**: `demo@rakfort.com` / `governance.demo@Rakfort`
+* **Admin Login**: `demo@kavach.com` / `governance.demo@Kavach`

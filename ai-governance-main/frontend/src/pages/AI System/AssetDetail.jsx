@@ -99,7 +99,7 @@ const AssetDetail = () => {
       ? activeAsset.status.charAt(0).toUpperCase() + activeAsset.status.slice(1).toLowerCase()
       : "Active",
     description: activeAsset.description || "AI assistant for call center operations and customer support",
-    frameworks: ["GDPR", "AI Act", "CCPA"],
+    frameworks: ["DPDP Act 2023", "India AI Guidelines", "DPDP Rules 2025"],
     lastUpdated: activeAsset.updatedAt ? new Date(activeAsset.updatedAt).toISOString().split('T')[0] : "2024-01-11",
     overview: {
       totalCalls: 15420,
@@ -131,7 +131,7 @@ const AssetDetail = () => {
         category: "Compliance Risk",
         severity: "High",
         status: "In Progress",
-        description: "Potential GDPR violations in customer data processing",
+        description: "Potential DPDP violations in customer data processing",
         impact: "High",
         probability: "Medium",
         mitigation: "Review and update data handling procedures",
@@ -151,8 +151,8 @@ const AssetDetail = () => {
           desc: "National Institute of Standards and Technology Artificial Intelligence Risk Management Framework"
         },
         {
-          name: "EU AI Act",
-          desc: "European Artificial Intelligence Act establishing harmonised rules on artificial intelligence"
+          name: "India AI Governance Guidelines",
+          desc: "Indian AI governance guidance for safe, trusted, and responsible artificial intelligence"
         },
         {
           name: "ISO 42001 Standard",
@@ -162,16 +162,16 @@ const AssetDetail = () => {
     } else if (t.includes("dataset") || t.includes("data")) {
       return [
         {
-          name: "GDPR",
-          desc: "General Data Protection Regulation for personal data protection and privacy in the EU"
+          name: "DPDP Act 2023",
+          desc: "Digital Personal Data Protection Act for personal data protection in India"
         },
         {
           name: "HIPAA",
           desc: "Health Insurance Portability and Accountability Act safeguarding sensitive medical information"
         },
         {
-          name: "CCPA",
-          desc: "California Consumer Privacy Act providing data privacy rights and consumer protection"
+          name: "DPDP Rules 2025",
+          desc: "Digital Personal Data Protection Rules for operational privacy obligations in India"
         }
       ];
     } else {

@@ -1,6 +1,6 @@
 # 🚀 Agent System Deep-Dive Technical Documentation
 
-Welcome to the principal engineering documentation for the **Rakfort AI Governance Platform's Agentic AI System**. This document serves as a complete technical guide, system architecture blueprint, and troubleshooting manual for maintainers, architects, and engineers.
+Welcome to the principal engineering documentation for the **Kavach AI Governance Platform's Agentic AI System**. This document serves as a complete technical guide, system architecture blueprint, and troubleshooting manual for maintainers, architects, and engineers.
 
 ---
 

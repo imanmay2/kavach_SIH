@@ -10,7 +10,7 @@ import {
   BarChart3,
   CheckCircle,
 } from "lucide-react";
-import demoVideoThumbnail from "@/assets/rakfort-demo-video.jpg";
+import demoVideoThumbnail from "@/assets/kavach-demo-video.jpg";
 import ContactSupport from "@/components/contactSupport";
 
 const Demo = () => {
@@ -31,7 +31,7 @@ const Demo = () => {
     {
       title: "Compliance Monitoring",
       description:
-        "Continuous monitoring for GDPR, EU AI Act, and NIST compliance",
+        "Continuous monitoring for DPDP Act, India AI Guidelines, and NIST compliance",
       icon: CheckCircle,
       color: "text-green-600",
     },
@@ -61,7 +61,7 @@ const Demo = () => {
       <main className="p-6">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-foreground mb-2">
-            RAKFORT Demo
+            KAVACH Demo
           </h1>
           <p className="text-muted-foreground">
             Interactive demonstration of AI governance and security features
@@ -73,14 +73,14 @@ const Demo = () => {
           <CardHeader>
             <CardTitle>Product Overview Video</CardTitle>
             <p className="text-sm text-muted-foreground">
-              See how RAKFORT helps organizations manage AI governance,
+              See how KAVACH helps organizations manage AI governance,
               security, and compliance
             </p>
           </CardHeader>
           <CardContent>
             <VideoPlayer
               thumbnailSrc={demoVideoThumbnail}
-              title="RAKFORT AI Governance Platform Demo"
+              title="KAVACH AI Governance Platform Demo"
               description="Learn how we help organizations achieve AI governance excellence"
               duration="5:42"
               secureVideoEndpoint="/video/demo"
@@ -117,7 +117,7 @@ const Demo = () => {
         {/* Key Benefits */}
         <Card className="mt-8">
           <CardHeader>
-            <CardTitle>Why Choose RAKFORT?</CardTitle>
+            <CardTitle>Why Choose KAVACH?</CardTitle>
             <p className="text-sm text-muted-foreground">
               Key benefits and competitive advantages
             </p>
@@ -130,7 +130,7 @@ const Demo = () => {
                 </div>
                 <h4 className="font-semibold mb-2">Comprehensive Compliance</h4>
                 <p className="text-sm text-muted-foreground">
-                  Stay compliant with EU AI Act, GDPR, NIST, and other
+                  Stay compliant with India AI Guidelines, DPDP Act, NIST, and other
                   regulatory frameworks
                 </p>
               </div>

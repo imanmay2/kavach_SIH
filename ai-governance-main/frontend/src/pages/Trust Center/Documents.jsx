@@ -239,7 +239,7 @@ const TrustCenterDocuments = () => {
       <main className="p-6 space-y-6">
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-3xl font-bold">Trust Center Documents</h1>
+            <h1 className="text-3xl font-bold">Ledger Documents</h1>
             <p className="text-muted-foreground">
               Access policies, certifications, and compliance documentation
             </p>

@@ -1,7 +1,7 @@
 @echo off
 title AI Governance Platform Setup and Runner
 echo =======================================================================
-echo           Rakfort AI Governance Platform Setup and Runner (Vertex AI)
+echo           Kavach AI Governance Platform Setup and Runner (Vertex AI)
 echo =======================================================================
 echo.
 

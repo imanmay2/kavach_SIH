@@ -10,7 +10,7 @@ const storage = new Storage({
 router.get("/demo", async (req, res) => {
   try {
     const bucketName = "governance-bucket";
-    const fileName = "rakfort-videos/governance-demo.mp4";
+    const fileName = "kavach-videos/governance-demo.mp4";
 
     const options = {
       version: "v4",

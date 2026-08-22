@@ -71,7 +71,7 @@ const CATEGORIES = [
 
 const PRIORITIES = ["Critical", "High", "Medium", "Low"];
 const STATUSES   = ["Draft", "Approved", "In Progress", "Implemented", "Rejected"];
-const FRAMEWORKS = ["ISO 27001", "IEC 62443", "OWASP ASVS", "NIST CSF", "PCI DSS", "GDPR", "NIS2", "MDR", "HIPAA"];
+const FRAMEWORKS = ["ISO 27001", "IEC 62443", "OWASP ASVS", "NIST CSF", "PCI DSS", "DPDP Act 2023", "DPDP Rules 2025", "India AI Governance Guidelines", "NIS2", "MDR", "HIPAA"];
 
 // ── Empty form state ────────────────────────────────────────
 const emptyForm = {
@@ -579,9 +579,9 @@ export default function RequirementsPage() {
     const workbook = XLSX.utils.book_new();
     const sheets = {
       "Project Overview": [
-        ["RAKFORT-HEALTHCARE PROJECT - Cyber Risk Assessment"],
+        ["KAVACH-HEALTHCARE PROJECT - Cyber Risk Assessment"],
         [],
-        ["Project Name:", "RAKFORT-HEALTHCARE"],
+        ["Project Name:", "KAVACH-HEALTHCARE"],
         ["Assessment Date:", today],
         ["Version:", "1.0"],
         ["Industry:", "Healthcare"],
@@ -622,7 +622,7 @@ export default function RequirementsPage() {
         ...riskRows.map(r => [r.id, r.name, r.level, r.treatment, r.controls, "TBD", r.owner, today, r.review, r.treatment === "Mitigate" ? "Planned" : "Accepted", "0%"]),
       ],
       "Compliance Dashboard": [
-        ["RAKFORT-HEALTHCARE - Compliance & Risk Dashboard"],
+        ["KAVACH-HEALTHCARE - Compliance & Risk Dashboard"],
         [],
         ["Assessment Summary"],
         ["Total Assets:", assets.length, "", "High Risks:", riskRows.filter(r => r.level === "High").length],
@@ -637,7 +637,7 @@ export default function RequirementsPage() {
       XLSX.utils.book_append_sheet(workbook, sheet, name);
     });
 
-    XLSX.writeFile(workbook, `RAKFORT_Healthcare_Risk_Assessment_${today}.xlsx`);
+    XLSX.writeFile(workbook, `KAVACH_Healthcare_Risk_Assessment_${today}.xlsx`);
   };
 
   // ── Summary counts ─────────────────────────────────────────

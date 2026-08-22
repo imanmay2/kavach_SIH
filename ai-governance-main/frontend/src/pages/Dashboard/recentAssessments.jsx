@@ -7,12 +7,12 @@ const assessments = [
     type: "high-risk"
   },
   {
-    title: "Machine Learning Model - GDPR Compliance Verified",
+    title: "Machine Learning Model - DPDP Act Compliance Verified",
     time: "2 days ago",
     type: "compliance"
   },
   {
-    title: "Automated Decision System - EU AI Act Assessment Pending",
+    title: "Automated Decision System - India AI Governance Assessment Pending",
     time: "3 days ago",
     type: "pending"
   },

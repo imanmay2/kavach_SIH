@@ -70,9 +70,9 @@ const Reports = () => {
   ];
 
   const gapAssessmentData = [
-    { framework: "GDPR", compliance: 85, gaps: 15 },
-    { framework: "CCPA", compliance: 78, gaps: 22 },
-    { framework: "AI Act", compliance: 62, gaps: 38 },
+    { framework: "DPDP Act 2023", compliance: 85, gaps: 15 },
+    { framework: "DPDP Rules 2025", compliance: 78, gaps: 22 },
+    { framework: "India AI Guidelines", compliance: 62, gaps: 38 },
     { framework: "ISO 27001", compliance: 90, gaps: 10 },
     { framework: "SOC 2", compliance: 73, gaps: 27 },
     { framework: "NIST AI RMF", compliance: 68, gaps: 32 },
@@ -144,7 +144,7 @@ const Reports = () => {
       designation: "Lead AI Governance Specialist",
       department: "AI Ethics & Compliance",
       email: "sarah.chen@company.com",
-      expertise: ["GDPR", "AI Act", "Risk Assessment"],
+      expertise: ["DPDP Act", "India AI Guidelines", "Risk Assessment"],
       avatar: "SC",
       reportType: "Primary Lead",
     },
@@ -164,7 +164,7 @@ const Reports = () => {
       designation: "Compliance Manager",
       department: "Legal & Compliance",
       email: "emily.watson@company.com",
-      expertise: ["CCPA", "Data Privacy", "Regulatory Compliance"],
+      expertise: ["DPDP Rules", "Data Privacy", "Regulatory Compliance"],
       avatar: "EW",
       reportType: "Compliance Review",
     },
@@ -211,9 +211,9 @@ const Reports = () => {
   const remediationItems = [
     {
       id: 1,
-      title: "Implement GDPR Article 22 Compliance",
+      title: "Implement DPDP Consent and Data Rights Compliance",
       priority: "High",
-      framework: "GDPR",
+      framework: "DPDP Act 2023",
       description: "Add automated decision-making transparency features",
       assignee: "Dr. Sarah Chen",
       dueDate: "2025-01-15",
@@ -224,7 +224,7 @@ const Reports = () => {
       id: 2,
       title: "Enhance Model Explainability",
       priority: "Medium",
-      framework: "AI Act",
+      framework: "India AI Guidelines",
       description: "Implement explanation interfaces for high-risk AI systems",
       assignee: "Michael Rodriguez",
       dueDate: "2025-02-01",
@@ -235,8 +235,8 @@ const Reports = () => {
       id: 3,
       title: "Update Data Retention Policies",
       priority: "Medium",
-      framework: "CCPA",
-      description: "Align data retention with CCPA requirements",
+      framework: "DPDP Rules 2025",
+      description: "Align data retention with DPDP requirements",
       assignee: "Emily Watson",
       dueDate: "2025-01-30",
       status: "In Progress",
@@ -246,7 +246,7 @@ const Reports = () => {
       id: 4,
       title: "Implement Bias Testing Framework",
       priority: "High",
-      framework: "AI Act",
+      framework: "India AI Guidelines",
       description: "Establish systematic bias detection and mitigation",
       assignee: "Dr. Sarah Chen",
       dueDate: "2025-01-20",
@@ -917,7 +917,7 @@ const Reports = () => {
                       </h4>
                       <ul className="text-sm text-red-700 space-y-1">
                         <li>
-                          • AI Act compliance for high-risk systems (38% gap)
+                          • India AI Guidelines compliance for high-risk systems (38% gap)
                         </li>
                         <li>• NIST AI RMF implementation (32% gap)</li>
                         <li>• Algorithmic bias testing procedures</li>
@@ -930,7 +930,7 @@ const Reports = () => {
                       <ul className="text-sm text-yellow-700 space-y-1">
                         <li>• SOC 2 Type II certification (27% gap)</li>
                         <li>
-                          • CCPA automated decision-making disclosure (22% gap)
+                          • DPDP Rules consent and notice workflow (22% gap)
                         </li>
                         <li>• Model explainability documentation</li>
                       </ul>
@@ -941,7 +941,7 @@ const Reports = () => {
                       </h4>
                       <ul className="text-sm text-blue-700 space-y-1">
                         <li>
-                          • GDPR automated processing notifications (15% gap)
+                          • DPDP consent and notice obligations (15% gap)
                         </li>
                         <li>• ISO 27001 documentation updates (10% gap)</li>
                         <li>• Environmental impact reporting</li>

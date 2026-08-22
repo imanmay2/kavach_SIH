@@ -32,8 +32,8 @@ const Sidebar = ({ open, onToggle }) => {
       >
         <div className="flex items-center flex-1 overflow-hidden">
           <img
-            src="/logo.png"
-            alt="RAKfort Logo"
+            src="/logo.svg"
+            alt="Kavach Logo"
             className="w-8 h-8 flex-shrink-0"
           />
           <div
@@ -41,7 +41,7 @@ const Sidebar = ({ open, onToggle }) => {
               open ? "ml-2 w-auto opacity-100" : "w-0 opacity-0"
             }`}
           >
-            <h1 className="text-lg font-bold whitespace-nowrap">RAKFORT</h1>
+            <h1 className="text-lg font-bold whitespace-nowrap">KAVACH</h1>
             <p className="text-xs text-white/70 whitespace-nowrap">
               AI Governance & Security
             </p>
@@ -128,7 +128,7 @@ const Sidebar = ({ open, onToggle }) => {
 
             <SidebarItem
               icon={<Heart />}
-              label="Trust Center"
+              label="Ledger"
               to="#"
               open={open}
               subItems={[

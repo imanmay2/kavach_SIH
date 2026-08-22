@@ -8,7 +8,7 @@ export const riskAlerts = [
   {
     color: "yellow",
     title: "Medium Risk: Compliance",
-    description: "HR AI tools need GDPR review",
+    description: "HR AI tools need DPDP review",
     icon: "⚠️",
   },
   {
@@ -41,7 +41,7 @@ export const recentResults = [
   {
     color: "green",
     status: "Passed",
-    title: "GDPR Compliance Check",
+    title: "DPDP Compliance Check",
     description: "All systems passed - June 15, 2025",
   },
   {

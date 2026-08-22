@@ -5,7 +5,7 @@ const frameworks = [
   {
     id: "eu",
     logo: "AIA",
-    title: "EU AI Act",
+    title: "India AI Governance Guidelines",
     description: "European Artificial Intelligence Act",
     status: "Enabled",
     details: {

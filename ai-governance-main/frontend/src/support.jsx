@@ -32,7 +32,7 @@ const faqData = [
   },
   {
     question: 'How is data privacy handled on the platform?',
-    answer: 'We adhere to strict data privacy regulations, including GDPR and CCPA. All data is encrypted both in transit and at rest. The platform allows you to set granular access controls to ensure that sensitive information is only accessible to authorized personnel.'
+    answer: 'We adhere to strict data privacy regulations, including the DPDP Act 2023 and DPDP Rules 2025. All data is encrypted both in transit and at rest. The platform allows you to set granular access controls to ensure that sensitive information is only accessible to authorized personnel.'
   },
 ];
 
