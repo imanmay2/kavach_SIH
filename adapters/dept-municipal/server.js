@@ -51,7 +51,7 @@ app.post('/submit_record', (req, res) => {
     
     // Publish event
     try {
-        publishEvent('RECORD_SUBMITTED', { department: 'municipal', record: newRecord });
+        publishEvent('RECORD_SUBMITTED', { department_id: 'municipal', record: newRecord });
     } catch (err) {
         console.error('[Adapter] Failed to publish event:', err.message);
     }
@@ -79,7 +79,30 @@ app.get('/status/:id', (req, res) => {
     
     if (oldStatus !== record.status) {
         try {
-            publishEvent('STATUS_CHANGED', { department: 'municipal', record_id: record.id, old_status: oldStatus, new_status: record.status });
+            const now = new Date().toISOString();
+            publishEvent('STATUS_CHANGED', { 
+                department_id: 'municipal', 
+                record_id: record.id, 
+                old_status: oldStatus, 
+                new_status: record.status,
+                updated_at: now
+            });
+            
+            if (record.status === 'Approved') {
+                publishEvent('APPLICATION_APPROVED', {
+                    department_id: 'municipal',
+                    record_id: record.id,
+                    approved_at: now,
+                    remarks: 'Automatically approved'
+                });
+            } else if (record.status === 'Rejected') {
+                publishEvent('APPLICATION_REJECTED', {
+                    department_id: 'municipal',
+                    record_id: record.id,
+                    rejected_at: now,
+                    reason: 'Automatically rejected'
+                });
+            }
         } catch (err) {
             console.error('[Adapter] Failed to publish event:', err.message);
         }
