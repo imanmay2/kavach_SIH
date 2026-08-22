@@ -1,0 +1,10 @@
+{
+  "name": "event-bus",
+  "version": "1.0.0",
+  "description": "Shared event bus + contracts for the interop layer",
+  "main": "eventBus.js",
+  "dependencies": {
+    "redis": "^4.6.13",
+    "zod": "^3.25.76"
+  }
+}
