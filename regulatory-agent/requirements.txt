@@ -10,3 +10,4 @@ pypdf
 python-dotenv
 pydantic
 langchain-text-splitters
+python-multipart

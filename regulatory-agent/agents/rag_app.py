@@ -67,7 +67,9 @@ def initialize_rag_service():
         embeddings = GoogleGenerativeAIEmbeddings(model=GEMINI_EMBED_MODEL)
         llm = ChatGoogleGenerativeAI(model=GEMINI_CHAT_MODEL, temperature=0.2)
         
-        qclient = QdrantClient(url=QDRANT_URL, port=QDRANT_PORT)
+        # Using :memory: mode for local testing as requested.
+        # TODO: Swap back to QDRANT_URL/QDRANT_PORT for real Qdrant in production/demo
+        qclient = QdrantClient(location=":memory:")
         
         try:
             qclient.get_collection(RAG_COLLECTION)
@@ -123,9 +125,20 @@ async def query(request: QueryRequest):
 
     context = "\n\n".join([d.page_content for d in docs])
     msgs = RAG_PROMPT.format_messages(history="", context=context, question=request.question)
-    res = llm.invoke(msgs)
-    answer = res.content
+    response = llm.invoke(msgs)
     
     sources = list(set([d.metadata.get("source", "unknown") for d in docs]))
     
+    answer_content = response.content
+    if isinstance(answer_content, list):
+        text_parts = []
+        for part in answer_content:
+            if isinstance(part, str):
+                text_parts.append(part)
+            elif isinstance(part, dict) and "text" in part:
+                text_parts.append(part["text"])
+        answer = "".join(text_parts)
+    else:
+        answer = str(answer_content)
+        
     return QueryResponse(answer=answer, sources=sources)

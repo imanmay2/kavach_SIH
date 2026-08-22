@@ -106,8 +106,21 @@ Output ONLY a JSON list of objects, where each object represents a selected appr
             0.1
         )
         
+        # Ensure response is a string
+        if isinstance(response, list):
+            # Try to extract text if it's a list of blocks
+            text_parts = []
+            for part in response:
+                if isinstance(part, str):
+                    text_parts.append(part)
+                elif isinstance(part, dict) and "text" in part:
+                    text_parts.append(part["text"])
+            response_text = "".join(text_parts)
+        else:
+            response_text = str(response)
+
         # Clean response
-        clean_res = response.strip().replace("```json", "").replace("```", "").strip()
+        clean_res = response_text.strip().replace("```json", "").replace("```", "").strip()
         data = json.loads(clean_res)
         
         approvals = []

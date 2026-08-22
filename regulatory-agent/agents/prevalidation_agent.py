@@ -85,7 +85,18 @@ Submitted Documents (Name and Summary):
             HumanMessage(content=user_prompt)
         ]
         response = llm.invoke(messages)
-        text = response.content.strip()
+        
+        # Ensure response is a string
+        if isinstance(response.content, list):
+            text_parts = []
+            for part in response.content:
+                if isinstance(part, str):
+                    text_parts.append(part)
+                elif isinstance(part, dict) and "text" in part:
+                    text_parts.append(part["text"])
+            text = "".join(text_parts)
+        else:
+            text = str(response.content)
         
         # Clean JSON block
         if text.startswith("```json"):
