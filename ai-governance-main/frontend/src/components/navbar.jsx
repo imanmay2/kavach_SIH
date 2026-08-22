@@ -77,7 +77,7 @@ const Navbar = ({ onToggleSidebar }) => {
               onClick={() => navigate("/")}
             >
               <h1 className="text-2xl font-orbitron font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent tracking-wider drop-shadow-sm">
-                AI-GOVERNANCE
+                INDUSTRIAL COMPLIANCE GATEWAY
               </h1>
               <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-700 opacity-70"></div>
             </div>

@@ -37,6 +37,9 @@ import RateLimitSnackbar from "./components/rateLimitSnackbar";
 import RequirementsPage from "./pages/requirements";
 import Collection from "./pages/Collection/Collection";
 import NotificationModal from "./components/NotificationModal";
+import CitizenTracker from "./pages/interop/CitizenTracker";
+import OfficialDashboard from "./pages/interop/OfficialDashboard";
+import ConsentGrantScreen from "./pages/interop/ConsentGrantScreen";
 
 function AppRoutes() {
   return (
@@ -78,6 +81,9 @@ function AppRoutes() {
           <Route path="documents" element={<TrustCenterDocuments />} />
           <Route path="insights" element={<TrustCenterInsight />} />
           <Route path="support" element={<Support />} />
+          <Route path="interop/tracker" element={<CitizenTracker />} />
+          <Route path="interop/dashboard" element={<OfficialDashboard />} />
+          <Route path="interop/consent" element={<ConsentGrantScreen />} />
         </Route>
       </Route>
 

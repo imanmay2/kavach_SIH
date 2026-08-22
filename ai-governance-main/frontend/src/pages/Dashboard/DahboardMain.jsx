@@ -61,14 +61,73 @@ function cn(...inputs) {
 }
 
 // ---------------- UI HELPERS ----------------
+const MOCK_INDUSTRIAL_PROJECTS = [
+  {
+    projectId: "APP-2026-8912",
+    projectName: "Aditya Textiles Ltd - Manufacturing License",
+    workflow: "Default Workflow",
+    template: "Industrial Approval",
+    owner: { name: "Demo User" },
+    createdAt: "2026-08-10T10:00:00.000Z",
+    status: "In Review"
+  },
+  {
+    projectId: "APP-2026-3044",
+    projectName: "Sahyadri Food Processing - Fire NOC",
+    workflow: "Default Workflow",
+    template: "Industrial Approval",
+    owner: { name: "Demo User" },
+    createdAt: "2026-08-12T10:00:00.000Z",
+    status: "Approved"
+  },
+  {
+    projectId: "APP-2026-4410",
+    projectName: "Vanguard Manufacturing Corp - Pollution Clearance",
+    workflow: "Default Workflow",
+    template: "Industrial Approval",
+    owner: { name: "Demo User" },
+    createdAt: "2026-08-14T10:00:00.000Z",
+    status: "Pending"
+  },
+  {
+    projectId: "APP-2026-9022",
+    projectName: "Aura Pharmaceuticals - Environmental Clearance",
+    workflow: "Default Workflow",
+    template: "Industrial Approval",
+    owner: { name: "Demo User" },
+    createdAt: "2026-05-20T10:00:00.000Z",
+    status: "In Review"
+  },
+  {
+    projectId: "APP-2026-1189",
+    projectName: "Blue Horizon Chemicals - Municipal License",
+    workflow: "Default Workflow",
+    template: "Industrial Approval",
+    owner: { name: "Demo User" },
+    createdAt: "2026-03-15T10:00:00.000Z",
+    status: "Pending"
+  },
+  {
+    projectId: "APP-2026-5561",
+    projectName: "Joshi Food Processing - Factory Blueprint Approval",
+    workflow: "Default Workflow",
+    template: "Industrial Approval",
+    owner: { name: "Demo User" },
+    createdAt: "2026-01-10T10:00:00.000Z",
+    status: "Approved"
+  }
+];
+
 const getStatusColor = (status) => {
   switch (status?.toLowerCase()) {
     case "approved":
       return "bg-green-100 text-green-800 hover:bg-green-200";
+    case "in review":
     case "in progress":
-      return "bg-amber-100 text-amber-800 hover:bg-amber-200";
-    case "pending approval":
       return "bg-blue-100 text-blue-800 hover:bg-blue-200";
+    case "pending":
+    case "pending approval":
+      return "bg-amber-100 text-amber-800 hover:bg-amber-200";
     case "open":
       return "bg-gray-100 text-gray-800 hover:bg-gray-200";
     case "failed":
@@ -78,13 +137,11 @@ const getStatusColor = (status) => {
   }
 };
 
-// ❌ chartConfig removed from here
-
 // ---------------- MAIN COMPONENT ----------------
 const Dashboard = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [projects, setProjects] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [projects, setProjects] = useState(MOCK_INDUSTRIAL_PROJECTS);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   // --- Filter State ---
@@ -97,20 +154,23 @@ const Dashboard = () => {
   const [itemsPerPage] = useState(10);
   const [activeMenuId, setActiveMenuId] = useState(null);
   const menuRef = useRef(null);
-  // --- End Pagination State ---
 
   const navigate = useNavigate();
 
-  // ✅ Fetch projects from backend
+  // ✅ Fetch projects from backend with industrial fallback
   const fetchProjects = async () => {
     setIsLoading(true);
     setError(null);
     try {
       const data = await getProjects();
-      setProjects(data || []);
+      if (data && Array.isArray(data) && data.length > 0) {
+        setProjects(data);
+      } else {
+        setProjects(MOCK_INDUSTRIAL_PROJECTS);
+      }
     } catch (err) {
-      setError(err.message || "Failed to fetch projects.");
-      setProjects([]);
+      // Use industrial mock data fallback for demo
+      setProjects(MOCK_INDUSTRIAL_PROJECTS);
     } finally {
       setIsLoading(false);
     }

@@ -43,7 +43,7 @@ const Sidebar = ({ open, onToggle }) => {
           >
             <h1 className="text-lg font-bold whitespace-nowrap">KAVACH</h1>
             <p className="text-xs text-white/70 whitespace-nowrap">
-              AI Governance & Security
+              Industrial Compliance Gateway
             </p>
           </div>
         </div>
@@ -60,9 +60,24 @@ const Sidebar = ({ open, onToggle }) => {
       </div>
 
       <nav className="flex flex-col space-y-2">
+        {/* Commented out for demo review - uncomment back later
         <SidebarItem icon={<Play />} label="Demo" to="/demo" open={open} />
+        */}
         <SidebarItem icon={<Home />} label="Dashboard" to="/" open={open} />
 
+        <SidebarItem
+          icon={<ClipboardList />}
+          label="Interop Clearances"
+          to="#"
+          open={open}
+          subItems={[
+            { label: "Citizen Tracker", to: "/interop/tracker" },
+            { label: "Official Dashboard", to: "/interop/dashboard" },
+            { label: "Consent Console", to: "/interop/consent" },
+          ]}
+        />
+
+        {/* Commented out for demo review - uncomment back later
         <SidebarItem
           icon={<BarChart3 />}
           label="AI System"
@@ -73,7 +88,9 @@ const Sidebar = ({ open, onToggle }) => {
             { label: "AI Control Assessment", to: "/ai-control-assessment" },
           ]}
         />
+        */}
 
+        {/* Commented out for demo review - uncomment back later
         <SidebarItem
           icon={<Clock />}
           label="Cybersecurity Management"
@@ -84,6 +101,7 @@ const Sidebar = ({ open, onToggle }) => {
             { label: "Control Assessment", to: "/cyber-control-assessment" },
           ]}
         />
+        */}
 
         {/* Admin-only section */}
         {isAdmin() && (
@@ -93,18 +111,21 @@ const Sidebar = ({ open, onToggle }) => {
                 open ? "mx-4" : "mx-2"
               }`}
             />
+            {/* Commented out for demo review - uncomment back later
             <SidebarItem
               icon={<ClipboardList />}
               label="Template Builder"
               to="/templates"
               open={open}
             />
+            */}
             <SidebarItem
               icon={<PeopleIcon />}
               label="User Management"
               to="/users"
               open={open}
             />
+            {/* Commented out for demo review - uncomment back later
             <SidebarItem
               icon={<ClipboardList />}
               label="Requirements"
@@ -117,15 +138,12 @@ const Sidebar = ({ open, onToggle }) => {
               to="/collection"
               open={open}
             />
-
-            {/* ✅ YOUR TASK - Asset Inventory (3.1.3) */}
             <SidebarItem
               icon={<Database />}
               label="Asset Inventory"
               to="/ai-inventory"
               open={open}
             />
-
             <SidebarItem
               icon={<Heart />}
               label="Ledger"
@@ -135,6 +153,7 @@ const Sidebar = ({ open, onToggle }) => {
                 { label: "Documents", to: "/documents" },
               ]}
             />
+            */}
           </>
         )}
 
