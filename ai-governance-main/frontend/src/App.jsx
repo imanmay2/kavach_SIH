@@ -40,6 +40,7 @@ import NotificationModal from "./components/NotificationModal";
 import CitizenTracker from "./pages/interop/CitizenTracker";
 import OfficialDashboard from "./pages/interop/OfficialDashboard";
 import ConsentGrantScreen from "./pages/interop/ConsentGrantScreen";
+import InteropChatAssistant from "./pages/interop/InteropChatAssistant";
 
 function AppRoutes() {
   return (
@@ -84,6 +85,7 @@ function AppRoutes() {
           <Route path="interop/tracker" element={<CitizenTracker />} />
           <Route path="interop/dashboard" element={<OfficialDashboard />} />
           <Route path="interop/consent" element={<ConsentGrantScreen />} />
+          <Route path="interop/assistant" element={<InteropChatAssistant />} />
         </Route>
       </Route>
 

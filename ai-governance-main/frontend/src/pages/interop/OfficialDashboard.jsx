@@ -1,38 +1,58 @@
-import React, { useState } from "react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import React, { useState, useEffect } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { FileSpreadsheet, AlertCircle, CheckCircle, Clock, ShieldAlert, Download, Filter, Search } from "lucide-react";
-
-// Mock Official Applications Database
-const MOCK_DB = [
-  { id: "APP-2026-8912", applicant: "Rajesh Kumar (Aditya Textiles Ltd)", sector: "Textiles", stage: "Fire NOC Review", daysPending: 4, status: "Pending" },
-  { id: "APP-2026-3044", applicant: "Sunita Deshmukh (Sahyadri Food Processing)", sector: "Food Processing", stage: "Approved", daysPending: 0, status: "Approved" },
-  { id: "APP-2026-4410", applicant: "Amit Patel (Vanguard Manufacturing Corp)", sector: "Manufacturing", stage: "Municipal Corporation", daysPending: 1, status: "Pending" },
-  { id: "APP-2026-9022", applicant: "Vikram Malhotra (Aura Pharmaceuticals)", sector: "Pharmaceuticals", stage: "Pollution Control Board", daysPending: 3, status: "Pending" },
-  { id: "APP-2026-1189", applicant: "Priya Sharma (Blue Horizon Chemicals)", sector: "Chemicals", stage: "Municipal Corporation", daysPending: 5, status: "Pending" },
-  { id: "APP-2026-5561", applicant: "Anand Joshi (Joshi Food Processing)", sector: "Food Processing", stage: "Approved", daysPending: 0, status: "Approved" }
-];
+import { FileSpreadsheet, CheckCircle, Clock, ShieldAlert, Download, Filter, Search, RefreshCw } from "lucide-react";
+import { getAllApplications } from "./api/interopApi";
+import SlaStatusBadge from "./components/SlaStatusBadge";
 
 export default function OfficialDashboard() {
+  const [applications, setApplications] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [filterSector, setFilterSector] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Dynamic calculations
-  const totalApps = MOCK_DB.length;
-  const pendingApps = MOCK_DB.filter(app => app.status === "Pending").length;
-  const approvedApps = MOCK_DB.filter(app => app.status === "Approved").length;
-  const slaBreaches = MOCK_DB.filter(app => app.status === "Pending" && app.daysPending > 2).length;
+  useEffect(() => {
+    async function loadData() {
+      setLoading(true);
+      try {
+        const data = await getAllApplications();
+        setApplications(data);
+      } catch (err) {
+        console.error("Failed to load applications for official dashboard:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadData();
+  }, []);
 
-  const filteredDB = MOCK_DB.filter(app => {
+  // Dynamic calculations from applications array
+  const totalApps = applications.length;
+  const pendingApps = applications.filter(app => app.currentStatus === "Pending" || app.currentStatus === "In Review").length;
+  const approvedApps = applications.filter(app => app.currentStatus === "Approved").length;
+  const slaBreaches = applications.filter(app => app.daysPending > 2).length;
+
+  const filteredApps = applications.filter(app => {
     const matchesSector = filterSector === "All" || app.sector === filterSector;
     const matchesSearch = app.applicant.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           app.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          app.stage.toLowerCase().includes(searchQuery.toLowerCase());
+                          app.title.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesSector && matchesSearch;
   });
+
+  if (loading) {
+    return (
+      <div className="flex-1 min-h-screen bg-background text-foreground p-6 flex items-center justify-center">
+        <div className="text-center space-y-3">
+          <RefreshCw className="h-8 w-8 text-primary animate-spin mx-auto" />
+          <p className="text-sm text-muted-foreground">Loading dashboard queue...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex-1 min-h-screen bg-background text-foreground p-6">
@@ -129,7 +149,6 @@ export default function OfficialDashboard() {
               <option value="Food Processing">Food Processing</option>
               <option value="Manufacturing">Manufacturing</option>
               <option value="Pharmaceuticals">Pharmaceuticals</option>
-              <option value="Chemicals">Chemicals</option>
             </select>
           </div>
         </div>
@@ -149,8 +168,10 @@ export default function OfficialDashboard() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {filteredDB.map((app) => {
-                  const isBreached = app.status === "Pending" && app.daysPending > 2;
+                {filteredApps.map((app) => {
+                  const isBreached = app.daysPending > 2;
+                  const currentStageName = app.stages?.find(s => s.status === "current")?.name || app.stages[app.stages.length - 1]?.name || "Review";
+                  
                   return (
                     <TableRow 
                       key={app.id} 
@@ -163,30 +184,21 @@ export default function OfficialDashboard() {
                       <TableCell>{app.sector}</TableCell>
                       <TableCell>
                         <Badge variant="outline" className="border-border text-foreground bg-muted/40">
-                          {app.stage}
+                          {currentStageName}
                         </Badge>
                       </TableCell>
                       <TableCell className={isBreached ? "text-destructive font-bold" : "text-foreground"}>
                         {app.daysPending} {app.daysPending === 1 ? "day" : "days"}
                       </TableCell>
                       <TableCell>
-                        {app.status === "Approved" ? (
-                          <Badge className="bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">Approved</Badge>
-                        ) : isBreached ? (
-                          <div className="flex items-center gap-1.5 text-destructive font-bold text-xs uppercase tracking-wide">
-                            <AlertCircle className="h-3.5 w-3.5" />
-                            <span>SLA Breach</span>
-                          </div>
-                        ) : (
-                          <Badge className="bg-amber-500/10 text-amber-500 border border-amber-500/20">On Track</Badge>
-                        )}
+                        <SlaStatusBadge status={app.currentStatus} daysPending={app.daysPending} />
                       </TableCell>
                     </TableRow>
                   );
                 })}
               </TableBody>
             </Table>
-            {filteredDB.length === 0 && (
+            {filteredApps.length === 0 && (
               <div className="py-12 text-center text-muted-foreground font-medium">
                 No matching applications found in the review queue.
               </div>

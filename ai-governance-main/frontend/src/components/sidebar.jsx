@@ -74,7 +74,15 @@ const Sidebar = ({ open, onToggle }) => {
             { label: "Citizen Tracker", to: "/interop/tracker" },
             { label: "Official Dashboard", to: "/interop/dashboard" },
             { label: "Consent Console", to: "/interop/consent" },
+            { label: "Interop AI Assistant", to: "/interop/assistant" },
           ]}
+        />
+
+        <SidebarItem
+          icon={<HelpCircle />}
+          label="Compliance Assistant"
+          to="/chat"
+          open={open}
         />
 
         {/* Commented out for demo review - uncomment back later
@@ -132,12 +140,14 @@ const Sidebar = ({ open, onToggle }) => {
               to="/requirements"
               open={open}
             />
+            */}
             <SidebarItem
               icon={<BarChart3 />}
               label="AI Requirement Collection"
               to="/collection"
               open={open}
             />
+            {/* Commented out for demo review - uncomment back later
             <SidebarItem
               icon={<Database />}
               label="Asset Inventory"

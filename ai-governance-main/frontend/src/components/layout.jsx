@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./navbar";
 import Sidebar from "./sidebar";
+import TrustCenterChatbot from "./trustCentreBot";
 
 const Layout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -11,7 +12,7 @@ const Layout = () => {
   };
 
   return (
-    <div className="flex min-h-screen w-screen bg-background overflow-x-hidden">
+    <div className="flex min-h-screen w-screen bg-background overflow-x-hidden relative">
       
       {sidebarOpen && (
         <div
@@ -48,6 +49,9 @@ const Layout = () => {
           <Outlet />
         </main>
       </div>
+
+      {/* Floating Chatbot Widget */}
+      <TrustCenterChatbot />
     </div>
   );
 };
