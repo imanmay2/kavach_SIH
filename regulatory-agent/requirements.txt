@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pandas
+openpyxl
+langgraph
+langchain-google-genai
+qdrant-client
+langchain-qdrant
+pypdf
+python-dotenv
+pydantic
+langchain-text-splitters
